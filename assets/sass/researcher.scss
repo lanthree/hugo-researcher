@@ -51,12 +51,22 @@ $y-medium: 1.0rem;
 .container {
     max-width: $max-width;
 }
+.container-hr {
+    max-width: $max-width;
+    background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
+    border: 0;
+    height: 3px;
+    // margin: 40px 0;
+}
 .navbar-brand {
     @extend %link-dark;
     font-size: 2rem;
 }
 .nav-link {
     @extend %link-default;
+}
+.footnote-ref {
+    font-weight: bold
 }
 #content {
     a {
@@ -105,6 +115,10 @@ $y-medium: 1.0rem;
     .container > ol, .footnotes > ol {
         padding-left: 0;
     }
+    ol ol, ol ul, ul ol, ul ul {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
     ul {
         list-style: inside;
         padding-left: 2rem;
@@ -122,6 +136,8 @@ $y-medium: 1.0rem;
         & th {
             @extend %table-cell;
             font-weight: bold;
+            background-color: #333;
+            color: white;
         }
         & td {
             @extend %table-cell;
@@ -146,6 +162,17 @@ $y-medium: 1.0rem;
     pre code {
         all: unset;
     }
+    .code-copy-btn {
+        // display: none;
+        opacity: 0.0;
+        transition: all 300ms ease-in-out;
+        float: right;
+        border: 0;
+    }
+    .highlight:hover .code-copy-btn {
+        // display: block;
+        opacity: 1.0;
+    }
     .highlight {
         margin: $y-medium auto;
         & > pre {
@@ -156,5 +183,9 @@ $y-medium: 1.0rem;
 #footer {
     a {
         @extend %link-dark;
+    }
+    .footer-beian {
+        text-align: right;
+        font-size: small;
     }
 }
