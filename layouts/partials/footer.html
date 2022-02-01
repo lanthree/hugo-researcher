@@ -1,5 +1,5 @@
 <div id="footer" class="mb-5">
-    <hr>
+    <hr class="container-hr">
     <div class="container text-center">
         {{ range $item := .Site.Params.socialIcons }}
             <a href="{{ $item.url }}" class="{{ $item.icon }} fa-1x" title="{{ $item.title }}"></a>
@@ -9,5 +9,9 @@
         <div class="container text-center">
             <a href="{{ .url | absURL }}" title="{{ .text }}"><small>{{ .text }}</small></a>
         </div>
+        <div class="container footer-beian">
+            <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery)">{{ .beian }}</a>
+        </div>
     {{ end }}
 </div>
+<script src="js/code-copy.js"></script>
