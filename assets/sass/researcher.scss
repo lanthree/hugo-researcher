@@ -123,6 +123,9 @@ $y-medium: 1.0rem;
     //     margin-top: 5px;
     //     margin-bottom: 5px;
     // }
+    li > p {
+        margin-bottom: 0;
+    }
     ul {
         list-style: inside;
         padding-left: 2rem;
