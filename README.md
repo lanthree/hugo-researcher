@@ -48,3 +48,4 @@ for more details.
 
 ## License
 [GPL-3.0 License](https://github.com/ojroques/hugo-researcher/blob/master/LICENSE)
+
