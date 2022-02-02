@@ -4,7 +4,7 @@ $avatar-size: {{ .Param "style.avatarSize" | default "90px;" }};
 
 // Colors
 $black: {{ .Param "style.colorBlack" | default "#222222" }};
-$red: {{ .Param "style.colorRed" | default "#dc3545" }};
+$color-main: {{ .Param "style.colorMain" | default "#dc3545" }};
 
 // Font
 $font-family: {{ .Param "style.fontFamily" | default "Inconsolata" }};
@@ -15,13 +15,13 @@ $y-medium: 1.0rem;
 
 // Placeholders
 %link-default {
-    color: $red;
+    color: $color-main;
     text-decoration: none;
     & * {
-        color: $red;
+        color: $color-main;
     }
     &:hover {
-        color: $red;
+        color: $color-main;
         text-decoration: underline;
     }
 }
@@ -46,7 +46,7 @@ $y-medium: 1.0rem;
 * {
     color: $black;
     font-family: $font-family;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 .container {
     max-width: $max-width;
@@ -68,12 +68,13 @@ $y-medium: 1.0rem;
 .footnote-ref {
     font-weight: bold
 }
+
 #content {
     a {
         @extend %link-default;
     }
     p {
-        margin-bottom: $y-small;
+        margin-bottom: $y-medium;
     }
     h1, h2, h3, h4, h5, h6 {
         font-size: medium;
@@ -84,6 +85,9 @@ $y-medium: 1.0rem;
         h#{$i} {
             font-size: 1.2rem + 0.2 * (4 - $i);
         }
+    }
+    .posttitle {
+        text-align: center;
     }
     img {
         display: block;
@@ -115,10 +119,10 @@ $y-medium: 1.0rem;
     .container > ol, .footnotes > ol {
         padding-left: 0;
     }
-    ol ol, ol ul, ul ol, ul ul {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+    // ol ol, ol ul, ul ol, ul ul {
+    //     margin-top: 5px;
+    //     margin-bottom: 5px;
+    // }
     ul {
         list-style: inside;
         padding-left: 2rem;
@@ -151,6 +155,10 @@ $y-medium: 1.0rem;
         font-style: italic;
         margin: $y-medium 0;
         padding: 8px 8px;
+        font-size: 0.8rem;
+    }
+    blockquote p {
+        margin: 0
     }
     code {
         color: $black;
